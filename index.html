@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devanshu Tak | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+    body {
+      background: linear-gradient(135deg,#0f172a,#1e293b);
+      color:white;
+      scroll-behavior:smooth;
+    }
+
+    nav {
+      position:sticky;top:0;
+      background:rgba(15,23,42,0.9);
+      padding:12px;text-align:center;
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
+
+    nav a {
+      margin:0 15px;color:#38bdf8;text-decoration:none;font-weight:500;
+    }
+
+    nav a:hover {color:white;}
+
+    header {
+      text-align:center;padding:100px 20px;
+    }
+
+    h1 {font-size:3rem;}
+
+    .typing {
+      font-size:1.2rem;color:#94a3b8;margin-top:10px;
+    }
+
+    section {padding:60px 20px;max-width:1100px;margin:auto;}
+
+    h2 {margin-bottom:20px;border-left:4px solid #38bdf8;padding-left:10px;}
+
+    .card {
+      background:rgba(30,41,59,0.8);
+      padding:20px;margin:15px 0;
+      border-radius:15px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .projects {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .project-card {
+      background:#1e293b;padding:20px;border-radius:15px;
+      transition:0.3s;
+    }
+
+    .project-card:hover {transform:scale(1.05);}
+
+    .btn {
+      display:inline-block;margin-top:10px;
+      padding:10px 15px;background:#38bdf8;color:black;
+      border-radius:8px;text-decoration:none;font-weight:bold;
+    }
+
+    .btn:hover {background:#0ea5e9;}
+
+    .skills-bar {margin:10px 0;}
+
+    .bar {
+      height:8px;background:#334155;border-radius:10px;
+      overflow:hidden;
+    }
+
+    .bar span {
+      display:block;height:100%;background:#38bdf8;
+    }
+
+    footer {
+      text-align:center;padding:20px;background:#1e293b;margin-top:40px;
+    }
+
+    .toggle {
+      position:fixed;right:20px;bottom:20px;
+      background:#38bdf8;color:black;border:none;
+      padding:10px;border-radius:50%;cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header>
+  <h1>Devanshu Tak</h1>
+  <div class="typing" id="typing"></div>
+  <a class="btn" href="#contact">Hire Me</a>
+  <a class="btn" href="Devanshu_Tak_Resume.pdf" download>Download Resume</a>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>I am a B.Tech student focused on becoming a Software Developer. I enjoy solving problems, building projects, and continuously learning new technologies.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <p>C++</p>
+    <div class="skills-bar"><div class="bar"><span style="width:85%"></span></div></div>
+
+    <p>JavaScript</p>
+    <div class="skills-bar"><div class="bar"><span style="width:75%"></span></div></div>
+
+    <p>HTML & CSS</p>
+    <div class="skills-bar"><div class="bar"><span style="width:90%"></span></div></div>
+
+    <p>Python</p>
+    <div class="skills-bar"><div class="bar"><span style="width:60%"></span></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="project-card">
+      <h3>Quiz App</h3>
+      <p>Interactive quiz built using JS.</p>
+      <a class="btn" href="#">View</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Portfolio</h3>
+      <p>Personal website to showcase skills.</p>
+      <a class="btn" href="#">View</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Funny Button</h3>
+      <p>Creative moving button project.</p>
+      <a class="btn" href="#">View</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: devanshutak2@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/Devanshutak2" target="_blank">github.com/Devanshutak2</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/devanshutak/" target="_blank">linkedin.com/in/devanshutak</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Devanshu Tak 🚀</p>
+</footer>
+
+<button class="toggle" onclick="toggleMode()">🌙</button>
+
+<script>
+  // Typing Effect
+  const text = ["Aspiring Software Developer","C++ Enthusiast","Web Developer"];
+  let i=0,j=0,current="",isDeleting=false;
+
+  function type(){
+    current=text[i];
+    if(isDeleting){
+      document.getElementById("typing").textContent=current.substring(0,j--);
+      if(j<0){isDeleting=false;i=(i+1)%text.length;}
+    } else {
+      document.getElementById("typing").textContent=current.substring(0,j++);
+      if(j>current.length){isDeleting=true;}
+    }
+    setTimeout(type,100);
+  }
+  type();
+
+  // Dark Mode Toggle
+  function toggleMode(){
+    document.body.classList.toggle("light");
+    if(document.body.classList.contains("light")){
+      document.body.style.background="#f1f5f9";
+      document.body.style.color="black";
+    } else {
+      document.body.style.background="linear-gradient(135deg,#0f172a,#1e293b)";
+      document.body.style.color="white";
+    }
+  }
+</script>
+
+</body>
+</html>
 
