@@ -42,3 +42,6 @@ section {
   background: #334155;
   border-radius: 5px;
 }
+body {
+  background: red;
+}
