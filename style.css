@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: 'Segoe UI';
+  background: #0f172a;
   color: white;
 }
 
@@ -10,36 +10,38 @@ body {
   padding: 120px 20px;
 }
 
+.hero h1 {
+  font-size: 3rem;
+}
+
 .buttons a {
   margin: 10px;
   padding: 12px 20px;
-  background: #22c55e;
-  color: white;
+  background: #3b82f6;
+  border-radius: 8px;
   text-decoration: none;
-  border-radius: 6px;
+  color: white;
+  transition: 0.3s;
+}
+
+.buttons a:hover {
+  background: #2563eb;
 }
 
 section {
-  padding: 60px;
+  padding: 80px 20px;
+  text-align: center;
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
+.project {
+  background: #1e293b;
+  margin: 20px auto;
   padding: 20px;
-  margin: 20px 0;
+  width: 60%;
   border-radius: 12px;
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.project:hover {
+  transform: translateY(-10px);
 }
-
-.skills span {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 15px;
-  background: #334155;
-  border-radius: 5px;
-}
-
