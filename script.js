@@ -1,47 +1,21 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI';
-  background: #0f172a;
-  color: white;
+const text = ["Software Developer", "AI/ML Enthusiast"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+  current = text[i];
+  document.querySelector(".typing").innerText = current.substring(0, j);
+
+  if (!isDeleting && j < current.length) {
+    j++;
+    setTimeout(type, 100);
+  } else if (isDeleting && j > 0) {
+    j--;
+    setTimeout(type, 50);
+  } else {
+    isDeleting = !isDeleting;
+    if (!isDeleting) i = (i + 1) % text.length;
+    setTimeout(type, 1000);
+  }
 }
 
-.hero {
-  text-align: center;
-  padding: 120px 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-.buttons a {
-  margin: 10px;
-  padding: 12px 20px;
-  background: #3b82f6;
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.buttons a:hover {
-  background: #2563eb;
-}
-
-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.project {
-  background: #1e293b;
-  margin: 20px auto;
-  padding: 20px;
-  width: 60%;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.project:hover {
-  transform: translateY(-10px);
-}
+type();
