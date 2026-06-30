@@ -1,21 +1,40 @@
-const text = ["Software Developer", "AI/ML Enthusiast"];
-let i = 0, j = 0, current = "", isDeleting = false;
+// Mobile nav toggle
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
 
-function type() {
-  current = text[i];
-  document.querySelector(".typing").innerText = current.substring(0, j);
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('is-open');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+  });
 
-  if (!isDeleting && j < current.length) {
-    j++;
-    setTimeout(type, 100);
-  } else if (isDeleting && j > 0) {
-    j--;
-    setTimeout(type, 50);
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) i = (i + 1) % text.length;
-    setTimeout(type, 1000);
-  }
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('is-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
-type();
+// Reveal-on-scroll for project rows and stack groups
+const revealTargets = document.querySelectorAll('.project, .stack-group');
+
+if ('IntersectionObserver' in window && revealTargets.length) {
+  revealTargets.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealTargets.forEach(el => observer.observe(el));
+}
