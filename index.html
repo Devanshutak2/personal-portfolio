@@ -1,44 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Devanshu Tak</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devanshu Tak — Full-Stack &amp; AI/ML Engineer</title>
+<meta name="description" content="Devanshu Tak — Full-stack developer (MERN) and AI/ML engineer. CSE student at JECRC University, Jaipur. Builder of the Sangam Motors CRM and HealthPal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="hero">
-  <h1>Devanshu Tak</h1>
-  <h2 class="typing"></h2>
-  <p>Crafting scalable web apps & AI solutions.</p>
-  <div class="buttons">
-    <a href="#projects">Projects</a>
-    <a href="resume.pdf">Resume</a>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<!-- ============ HEADER / TITLE BLOCK ============ -->
+<header class="topbar">
+  <div class="topbar__mark">
+    <span class="topbar__bracket">[</span>DT<span class="topbar__bracket">]</span>
   </div>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#stack">Stack</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="topbar__cta" href="resume.pdf" target="_blank" rel="noopener">
+    Résumé <span aria-hidden="true">↗</span>
+  </a>
+  <button class="topbar__menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
-<section id="projects">
-  <h2>Projects</h2>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#work">Work</a>
+  <a href="#stack">Stack</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+</div>
 
-  <div class="project">
-    <h3>Anemia Detection System</h3>
-    <p>AI-based detection system using image analysis.</p>
-    <a href="https://github.com/Devanshutak2/anemia-detection-system">GitHub</a>
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero__col hero__col--text">
+      <p class="eyebrow"><span class="eyebrow__dot"></span>AVAILABLE FOR FRESHER ROLES · JAIPUR / PUNE / BANGALORE</p>
+      <h1 class="hero__title">
+        Devanshu Tak
+      </h1>
+      <p class="hero__role">Full-stack engineer (MERN) building systems that hold up under real use — wired with a little AI where it earns its place.</p>
+
+      <dl class="specsheet" aria-label="Profile spec sheet">
+        <div class="specsheet__row">
+          <dt>BASE</dt>
+          <dd>Jaipur, Rajasthan, IN</dd>
+        </div>
+        <div class="specsheet__row">
+          <dt>EDU</dt>
+          <dd>B.Tech CSE (AI &amp; ML), JECRC University — 2026</dd>
+        </div>
+        <div class="specsheet__row">
+          <dt>CERT</dt>
+          <dd>Salesforce Certified Agentforce Specialist</dd>
+        </div>
+        <div class="specsheet__row">
+          <dt>STATUS</dt>
+          <dd><span class="status-tag">Open to work</span></dd>
+        </div>
+      </dl>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#work">View projects</a>
+        <a class="btn btn--ghost" href="mailto:devanshutak2@gmail.com">Say hello</a>
+      </div>
+    </div>
+
+    <div class="hero__col hero__col--diagram">
+      <svg class="stack-diagram" viewBox="0 0 460 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of the technology stack: client, server, database, and AI/ML layers">
+        <!-- connector lines -->
+        <g class="sd-lines" stroke="#3A4F6B" stroke-width="1.5" stroke-dasharray="4 4">
+          <path d="M230 86 V146" />
+          <path d="M230 222 V282" />
+          <path d="M230 358 V418" />
+          <path d="M60 116 H400" />
+          <path d="M60 252 H400" />
+          <path d="M60 388 H400" />
+        </g>
+
+        <!-- CLIENT layer -->
+        <g class="sd-node" data-delay="0">
+          <rect x="60" y="56" width="340" height="60" rx="2" />
+          <text x="80" y="80" class="sd-label">CLIENT</text>
+          <text x="80" y="100" class="sd-sub">React · React Router · Vite</text>
+          <circle cx="372" cy="86" r="4" class="sd-pin" />
+        </g>
+
+        <!-- SERVER layer -->
+        <g class="sd-node" data-delay="1">
+          <rect x="60" y="192" width="340" height="60" rx="2" />
+          <text x="80" y="216" class="sd-label">SERVER</text>
+          <text x="80" y="236" class="sd-sub">Node.js · Express · Django</text>
+          <circle cx="372" cy="222" r="4" class="sd-pin" />
+        </g>
+
+        <!-- DATA layer -->
+        <g class="sd-node" data-delay="2">
+          <rect x="60" y="328" width="340" height="60" rx="2" />
+          <text x="80" y="352" class="sd-label">DATA</text>
+          <text x="80" y="372" class="sd-sub">MongoDB · REST APIs</text>
+          <circle cx="372" cy="358" r="4" class="sd-pin" />
+        </g>
+
+        <!-- AI/ML layer -->
+        <g class="sd-node sd-node--accent" data-delay="3">
+          <rect x="60" y="428" width="340" height="60" rx="2" />
+          <text x="80" y="452" class="sd-label">AI / ML</text>
+          <text x="80" y="472" class="sd-sub">scikit-learn · TensorFlow · OpenCV</text>
+          <circle cx="372" cy="458" r="4" class="sd-pin sd-pin--accent" />
+        </g>
+
+        <text x="60" y="30" class="sd-title">SYS.STACK</text>
+        <text x="340" y="30" class="sd-rev">REV 26.1</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="work" id="work">
+    <div class="section-head">
+      <p class="eyebrow">SELECTED WORK</p>
+      <h2 class="section-title">Three builds, three different problems.</h2>
+    </div>
+
+    <div class="projects">
+
+      <!-- Project 01 -->
+      <article class="project">
+        <div class="project__meta">
+          <p class="project__index">P-01</p>
+          <dl class="project__spec">
+            <div><dt>ROLE</dt><dd>Sole developer · 20-week internship</dd></div>
+            <div><dt>STACK</dt><dd>React · Node.js · Express · MongoDB</dd></div>
+            <div><dt>STATUS</dt><dd><span class="status-tag status-tag--live">Deployed</span></dd></div>
+          </dl>
+        </div>
+        <div class="project__body">
+          <h3 class="project__title">Sangam Motors CRM</h3>
+          <p class="project__desc">A full-stack CRM built on-site for an authorized Honda dealership in Nasirabad, Rajasthan — replacing paper-based tracking across five operational areas: sales, leads, inventory, test rides, and service.</p>
+          <ul class="project__tags">
+            <li>Sales Dashboard</li>
+            <li>Lead Management</li>
+            <li>Vehicle Inventory</li>
+            <li>Test Ride Scheduling</li>
+            <li>Service Center</li>
+          </ul>
+          <div class="project__links">
+            <a href="https://github.com/Devanshutak2/CRM-PROJECT" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 02 -->
+      <article class="project">
+        <div class="project__meta">
+          <p class="project__index">P-02</p>
+          <dl class="project__spec">
+            <div><dt>ROLE</dt><dd>Full-stack developer</dd></div>
+            <div><dt>STACK</dt><dd>MERN · Real-time chat</dd></div>
+            <div><dt>STATUS</dt><dd><span class="status-tag">In progress · Private repo</span></dd></div>
+          </dl>
+        </div>
+        <div class="project__body">
+          <h3 class="project__title">HealthPal</h3>
+          <p class="project__desc">A healthcare platform pairing patients with providers — appointment booking and an in-app chat layer designed to cut the friction out of getting basic care scheduled.</p>
+          <ul class="project__tags">
+            <li>Appointment Booking</li>
+            <li>Patient Chat</li>
+            <li>Provider Directory</li>
+          </ul>
+          <div class="project__links">
+            <span class="project__links--muted">Source not public yet</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 03 -->
+      <article class="project">
+        <div class="project__meta">
+          <p class="project__index">P-03</p>
+          <dl class="project__spec">
+            <div><dt>ROLE</dt><dd>ML developer</dd></div>
+            <div><dt>STACK</dt><dd>Python · OpenCV · scikit-learn</dd></div>
+            <div><dt>STATUS</dt><dd><span class="status-tag status-tag--live">Deployed</span></dd></div>
+          </dl>
+        </div>
+        <div class="project__body">
+          <h3 class="project__title">Anemia Detection System</h3>
+          <p class="project__desc">An image-analysis model that screens for signs of anemia from conjunctiva photographs — a lightweight, low-cost first pass that doesn't require lab equipment.</p>
+          <ul class="project__tags">
+            <li>Image Classification</li>
+            <li>Computer Vision</li>
+            <li>Health Screening</li>
+          </ul>
+          <div class="project__links">
+            <a href="https://github.com/Devanshutak2/anemia-detection-system" target="_blank" rel="noopener">Source ↗</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ STACK ============ -->
+  <section class="stack" id="stack">
+    <div class="section-head">
+      <p class="eyebrow">TOOLBOX</p>
+      <h2 class="section-title">What it's built with.</h2>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-group">
+        <h3>Languages</h3>
+        <ul><li>JavaScript</li><li>Python</li><li>C++</li><li>SQL</li></ul>
+      </div>
+      <div class="stack-group">
+        <h3>Web</h3>
+        <ul><li>React.js</li><li>Node.js</li><li>Express</li><li>Django</li></ul>
+      </div>
+      <div class="stack-group">
+        <h3>Data &amp; AI/ML</h3>
+        <ul><li>MongoDB</li><li>scikit-learn</li><li>TensorFlow</li><li>OpenCV</li></ul>
+      </div>
+      <div class="stack-group">
+        <h3>Core CS</h3>
+        <ul><li>DSA</li><li>OOP</li><li>DBMS</li><li>Operating Systems</li></ul>
+      </div>
+      <div class="stack-group">
+        <h3>Platform</h3>
+        <ul><li>Salesforce</li><li>Agentforce</li><li>Git / GitHub</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="section-head">
+      <p class="eyebrow">ABOUT</p>
+      <h2 class="section-title">Currently finishing my degree, already shipping.</h2>
+    </div>
+    <div class="about__body">
+      <p>I'm a final-year B.Tech CSE (AI &amp; ML) student at JECRC University, Jaipur. Most of what I know about building software didn't come from a lecture hall — it came from a 20-week stretch inside an actual Honda dealership, rebuilding how their sales and service teams tracked everything, one module at a time.</p>
+      <p>I like the MERN stack for how fast it moves from idea to working product, and I'm picking up Salesforce and applied AI/ML because that's where a lot of the interesting fresher-level work is heading. Looking for a full-time role where I can keep building things people actually use.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer class="contact" id="contact">
+  <div class="contact__inner">
+    <p class="eyebrow">GET IN TOUCH</p>
+    <h2 class="contact__title">Let's build something.</h2>
+    <a class="contact__email" href="mailto:devanshutak2@gmail.com">devanshutak2@gmail.com</a>
+    <div class="contact__links">
+      <a href="https://github.com/Devanshutak2" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/devanshutak" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </div>
   </div>
-
-  <div class="project">
-    <h3>HealthPal</h3>
-    <p>Healthcare platform with chat & booking.</p>
-    <a href="#">GitHub</a>
+  <div class="contact__bottom">
+    <span>© 2026 Devanshu Tak</span>
+    <span>Jaipur, Rajasthan, IN</span>
   </div>
-
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: devanshutak2@gmail.com</p>
-</section>
+</footer>
 
 <script src="script.js"></script>
 </body>
